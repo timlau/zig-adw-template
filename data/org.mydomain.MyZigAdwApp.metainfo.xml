@@ -14,12 +14,11 @@
     <p>A simple desktop application in Zig using Adw.</p>
   </description>
   <categories>
-    <category>Game</category>
-    <category>LogicGame</category>
+    <category>Development</category>
   </categories>
   <keywords>
-    <keyword>picross</keyword>
-    <keyword>paint-by-number</keyword>
+    <keyword>zig</keyword>
+    <keyword>adwaita</keyword>
   </keywords>
 
   <launchable type="desktop-id">org.mydomain.MyZigAdwApp.desktop</launchable>
