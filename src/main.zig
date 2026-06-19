@@ -122,7 +122,7 @@ const ApplicationWindow = extern struct {
     }
 
     fn handleAboutAction(_: *gio.SimpleAction, _: ?*glib.Variant, win: *ApplicationWindow) callconv(.c) void {
-        const about = adw.AboutWindow.newFromAppdata("metainfo.xml", null);
+        const about = adw.AboutWindow.newFromAppdata(constants.app_path ++ "/metainfo.xml", null);
         gtk.Window.setTransientFor(about.as(gtk.Window), win.as(gtk.Window));
         gtk.Window.present(about.as(gtk.Window));
     }
@@ -149,7 +149,7 @@ const ApplicationWindow = extern struct {
         fn init(class: *Class) callconv(.c) void {
             gobject.Object.virtual_methods.dispose.implement(class, &dispose);
             gobject.Object.virtual_methods.finalize.implement(class, &finalize);
-            gtk.Widget.Class.setTemplateFromResource(class.as(gtk.Widget.Class), "/ui/window.ui");
+            gtk.Widget.Class.setTemplateFromResource(class.as(gtk.Widget.Class), constants.app_path ++ "/ui/window.ui");
             class.bindTemplateChildPrivate("window_title", .{});
         }
 
