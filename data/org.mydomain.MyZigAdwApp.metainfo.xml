@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop-application">
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>0BSD</project_license>
+  <update_contact>email@mydomain.com</update_contact>
+
+  <id>org.mydomain.MyZigAdwApp</id>
+  <name>MyZigAdwApp</name>
+  <summary>A simple desktop application in Zig using Adw</summary>
+  <developer id="mydomain.com">
+    <name translate="no">My Domain</name>
+  </developer>
+  <description>
+    <p>A simple desktop application in Zig using Adw.</p>
+  </description>
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
+  <keywords>
+    <keyword>picross</keyword>
+    <keyword>paint-by-number</keyword>
+  </keywords>
+
+  <launchable type="desktop-id">org.mydomain.MyZigAdwApp.desktop</launchable>
+  <icon type="stock">org.mydomain.MyZigAdwApp</icon>
+  <provides>
+    <binary>my_adw_app</binary>
+  </provides>
+
+  <url type="homepage">https://github.com/timlau/zig-adw_template</url>
+  <url type="bugtracker">https://github.com/timlau/zig-adw_template/issues</url>
+  <url type="vcs-browser">https://github.com/timlau/zig-adw_template</url>
+
+  <content_rating type="oars-1.1"/>
+</component>

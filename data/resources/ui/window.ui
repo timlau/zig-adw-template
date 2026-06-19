@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="MyZigAdwAppApplicationWindow" parent="AdwApplicationWindow">
+    <property name="title" translatable="yes">MyZigAdwApp</property>
+    <property name="default-width">600</property>
+    <property name="default-height">600</property>
+    <property name="content">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <child type="start">
+              <object class="GtkButton" id="library_menu_button">
+                <property name="icon-name">library-symbolic</property>
+                <property name="tooltip-text">Library</property>
+              </object>
+            </child>
+            <property name="title-widget">
+              <object class="AdwWindowTitle" id="window_title">
+                <property name="title" translatable="yes">MyZigAdwApp</property>
+              </object>
+            </property>
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">menu-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Main menu</property>
+                <property name="menu-model">main_menu</property>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton" id="info_menu_button">
+                <property name="icon-name">about-symbolic</property>
+                <property name="tooltip-text" translatable="yes">About this application</property>
+                <property name="popover">
+                  <object class="GtkPopover">
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">10</property>
+                        <property name="margin-top">10</property>
+                        <property name="margin-bottom">10</property>
+                        <property name="margin-start">10</property>
+                        <property name="margin-end">10</property>
+                        <child>
+                          <object class="GtkLabel" id="info_title">
+                            <style>
+                              <class name="heading" />
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="info_author">
+                            <style>
+                              <class name="caption-heading" />
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="info_copyright">
+                            <style>
+                              <class name="caption" />
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="info_source">
+                            <style>
+                              <class name="caption" />
+                            </style>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+  <menu id="main_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="action">win.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

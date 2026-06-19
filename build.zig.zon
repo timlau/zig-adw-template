@@ -1,0 +1,30 @@
+.{
+    .name = .nonograms,
+    .version = "0.0.0",
+    .fingerprint = 0xe326218998fb7f12, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.16.0",
+    .paths = .{
+        "data",
+        "po",
+        "puzzles",
+        "src",
+        "LICENSE",
+        "README.md",
+        "build.zig",
+        "build.zig.zon",
+        "screenshot.png",
+    },
+    .dependencies = .{
+        .gobject = .{
+            .path = "../zig-gobject/zig-out/bindings", // TODO
+        },
+        .libintl = .{
+            .url = "git+https://github.com/ianprime0509/zig-libintl?ref=main#99ed7bde57400894ef90a2fdeb45518bf1f975c8",
+            .hash = "libintl-0.0.0-ZIc29-glAAAkl5EQRCaI0_Qc5JHTLVhzgs6wQ8tJQmNt",
+        },
+        .libpbn = .{
+            .url = "git+https://github.com/ianprime0509/libpbn?ref=main#fe7716d66a74771b38a0cb8943b6e760245835dc",
+            .hash = "libpbn-0.0.0-TQi21fj_AACO0HH8lDsayQ_VhJ44fUsEZ01bEjJnsU5q",
+        },
+    },
+}

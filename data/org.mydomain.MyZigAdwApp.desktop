@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=MyZigAdwApp
+Comment=
+Categories=
+Exec=myzigadwapp %U
+DBusActivatable=true
+Terminal=false
+Icon=org.mydomain.MyZigAdwApp

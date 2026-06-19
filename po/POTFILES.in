@@ -1,0 +1,4 @@
+data/org.mydomain.MyZigAdwApp.desktop
+data/org.mydomain.MyZigAdwApp.metainfo.xml
+data/resources/ui/window.ui
+src/main.zig
