@@ -27,9 +27,9 @@
     <binary>my_adw_app</binary>
   </provides>
 
-  <url type="homepage">https://github.com/timlau/zig-adw_template</url>
-  <url type="bugtracker">https://github.com/timlau/zig-adw_template/issues</url>
-  <url type="vcs-browser">https://github.com/timlau/zig-adw_template</url>
+  <url type="homepage">https://github.com/timlau/zig-adw-template</url>
+  <url type="bugtracker">https://github.com/timlau/zig-adw-template/issues</url>
+  <url type="vcs-browser">https://github.com/timlau/zig-adw-template</url>
 
   <content_rating type="oars-1.1"/>
 </component>
