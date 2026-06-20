@@ -116,7 +116,7 @@ pub fn build(b: *std.Build) !void {
         "-o",
         b.pathFromRoot(b.pathJoin(&.{ "po", b.fmt("{s}.pot", .{constants.package})})),
         b.fmt("--package-name={s}", .{constants.app_name}),
-        "--package-version=0.0.0", // TODO: use real version once we can import build.zig.zon
+        "--package-version=" ++ constants.version,
         b.fmt("--copyright-holder={s} contributors", .{constants.app_name})
     });
 
