@@ -6,7 +6,6 @@ const gio = @import("gio");
 const gtk = @import("gtk");
 const adw = @import("adw");
 const intl = @import("libintl");
-const pbn = @import("libpbn");
 const c_allocator = std.heap.c_allocator;
 const mem = std.mem;
 const constants = @import("constants.zig").Constants;

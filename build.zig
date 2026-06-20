@@ -9,7 +9,6 @@ pub fn build(b: *std.Build) !void {
     const devel = optimize == .Debug;
 
     const gobject = b.dependency("gobject", .{});
-    const libpbn = b.dependency("libpbn", .{}).module("libpbn");
 
     const data_dir: std.Build.InstallDir = .{ .custom = "share" };
     const locale_dir: std.Build.InstallDir = .{ .custom = "share/locale" };
@@ -28,7 +27,6 @@ pub fn build(b: *std.Build) !void {
         .link_libc = true,
     });
     mod.addOptions("build_options", build_options);
-    mod.addImport("libpbn", libpbn);
     mod.addImport("glib", gobject.module("glib2"));
     mod.addImport("gobject", gobject.module("gobject2"));
     mod.addImport("gio", gobject.module("gio2"));
