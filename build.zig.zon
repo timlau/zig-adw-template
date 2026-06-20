@@ -1,18 +1,15 @@
 .{
-    .name = .nonograms,
-    .version = "0.0.0",
-    .fingerprint = 0xe326218998fb7f12, // Changing this has security and trust implications.
+    .name = .my_adw_app,
+    .version = "0.0.1",
+    .fingerprint = 0x4782f3b9126ea34c, // Changing this has security and trust implications.
     .minimum_zig_version = "0.16.0",
     .paths = .{
         "data",
         "po",
-        "puzzles",
         "src",
         "LICENSE",
-        "README.md",
         "build.zig",
         "build.zig.zon",
-        "screenshot.png",
     },
     .dependencies = .{
         .gobject = .{
