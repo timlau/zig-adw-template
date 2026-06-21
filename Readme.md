@@ -30,15 +30,18 @@ The template is work in progress and new features may be added in the future.
 - zig-gobject from [timlau/zig-gobject](https://github.com/timlau/zig-gobject) it contains som zig 0.16 fixes, currently not in the upstream zig-gobject.
 - zig-gobject must be checked out in the directory above the application (../zig-gobject).
   - Bindings must be generated using `zig build codegen`.
-  - `zig build codegen -Dmodules=Gtk-4.0`
-  - `zig build codegen -Dmodules=Adw-1`
+```
+zig build codegen -Dmodules=Gtk-4.0
+zig build codegen -Dmodules=Adw-1
+```
 
 ## Attributions
 - The template is heavily inspired by [nonograms](https://github.com/ianprime0509/nonograms) game at it was used as a starting point for this template.
 
 ## How to use
 
-- build and runthe application using:
+- build and run and the application using:
+
 ```
 zig build blueprints
 zig build run
