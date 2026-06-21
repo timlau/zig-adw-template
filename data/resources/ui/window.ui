@@ -9,12 +9,6 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
-            <child type="start">
-              <object class="GtkButton" id="library_menu_button">
-                <property name="icon-name">library-symbolic</property>
-                <property name="tooltip-text">Library</property>
-              </object>
-            </child>
             <property name="title-widget">
               <object class="AdwWindowTitle" id="window_title">
                 <property name="title" translatable="yes">MyZigAdwApp</property>

@@ -70,12 +70,9 @@ pub fn build(b: *std.Build) !void {
     b.getInstallStep().dependOn(&symbolic_icon_install.step);
 
     var gresources = gobject_build.buildCompileResources(gobject);
-    const app_group = try b.allocator.dupe(u8, constants.app_id);
-    std.mem.replaceScalar(u8, app_group,'.', '/');
-    const resources = gresources.addGroup(app_group);
+    const resources = gresources.addGroup(constants.app_path);
     resources.addFile("metainfo.xml", metainfo, .{});
     resources.addFile("icons/scalable/actions/about-symbolic.svg", b.path("data/resources/icons/scalable/actions/about-symbolic.svg"), .{});
-    resources.addFile("icons/scalable/actions/library-symbolic.svg", b.path("data/resources/icons/scalable/actions/library-symbolic.svg"), .{});
     resources.addFile("icons/scalable/actions/menu-symbolic.svg", b.path("data/resources/icons/scalable/actions/menu-symbolic.svg"), .{});
     resources.addFile("ui/window.ui", b.path("data/resources/ui/window.ui"), .{});
     mod.addImport("gresources", gresources.build(target));
@@ -112,13 +109,13 @@ pub fn build(b: *std.Build) !void {
         "-f",
         b.pathFromRoot(b.pathJoin(&.{ "po", "POTFILES.in" })),
         "-o",
-        b.pathFromRoot(b.pathJoin(&.{ "po", b.fmt("{s}.pot", .{constants.package})})),
-        b.fmt("--package-name={s}", .{constants.app_name}),
+        b.pathFromRoot(b.pathJoin(&.{ "po", b.fmt("{s}.pot", .{constants.app_name})})),
+        b.fmt("--package-name={s}", .{constants.app_title}),
         "--package-version=" ++ constants.version,
-        b.fmt("--copyright-holder={s} contributors", .{constants.app_name})
+        b.fmt("--copyright-holder={s} contributors", .{constants.app_title})
     });
 
-    const xgettext_step = b.step("xgettext", b.fmt("Generate {s}.pot using xgettext", .{constants.package}));
+    const xgettext_step = b.step("xgettext", b.fmt("Generate {s}.pot using xgettext", .{constants.app_name}));
     xgettext_step.dependOn(&run_xgettext.step);
 }
 

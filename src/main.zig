@@ -10,17 +10,17 @@ const c_allocator = std.heap.c_allocator;
 const mem = std.mem;
 const constants = @import("constants.zig").Constants;
 
-const package = constants.package;
 const app_name = constants.app_name;
+const app_title = constants.app_title;
 
 var global_io: std.Io = undefined;
 
 pub fn main(init: std.process.Init) !void {
     global_io = init.io;
 
-    intl.bindTextDomain(package, build_options.locale_dir ++ "");
-    intl.bindTextDomainCodeset(package, "UTF-8");
-    intl.setTextDomain(package);
+    intl.bindTextDomain(app_name, build_options.locale_dir ++ "");
+    intl.bindTextDomainCodeset(app_name, "UTF-8");
+    intl.setTextDomain(app_name);
 
     const app = Application.new();
     const args_vec = init.minimal.args.vector;
@@ -34,7 +34,7 @@ const Application = extern struct {
     pub const Parent = adw.Application;
 
     pub const getGObjectType = gobject.ext.defineClass(Application, .{
-        .name = constants.app_name ++ "Application",
+        .name = constants.app_title ++ "Application",
         .classInit = &Class.init,
     });
 
@@ -80,7 +80,7 @@ const ApplicationWindow = extern struct {
     };
 
     pub const getGObjectType = gobject.ext.defineClass(ApplicationWindow, .{
-        .name = constants.app_name ++ "ApplicationWindow",
+        .name = constants.app_title ++ "ApplicationWindow",
         .instanceInit = &init,
         .classInit = &Class.init,
         .parent_class = &Class.parent,
