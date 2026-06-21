@@ -117,6 +117,16 @@ pub fn build(b: *std.Build) !void {
 
     const xgettext_step = b.step("xgettext", b.fmt("Generate {s}.pot using xgettext", .{constants.app_name}));
     xgettext_step.dependOn(&run_xgettext.step);
+
+    const run_blueprint = b.addSystemCommand(&.{
+        "blueprint-compiler",
+        "batch-compile",
+        b.pathFromRoot(b.pathJoin(&.{"data/resources/ui/"})), // input dir
+        b.pathFromRoot(b.pathJoin(&.{"data/resources/ui/"})), // input dir
+        b.pathFromRoot(b.pathJoin(&.{"data/resources/ui/window.blp"})), // source files
+    });
+    const bluprint_step = b.step("blueprints","generate .ui files from .blp blueprints");
+    bluprint_step.dependOn(&run_blueprint.step);
 }
 
 fn readLinguas(b: *std.Build) []const []const u8 {

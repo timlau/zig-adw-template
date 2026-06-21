@@ -37,7 +37,13 @@ The template is work in progress and new features may be added in the future.
 - The template is heavily inspired by [nonograms](https://github.com/ianprime0509/nonograms) game at it was used as a starting point for this template.
 
 ## How to use
-- build and runthe application using `zig build run`.
+
+- build and runthe application using:
+```
+zig build blueprints
+zig build run
+```
+
 
 ## Creating a new project
 - most naming is done in the `src/constants.zig` and can be customized there.
