@@ -11,14 +11,13 @@ The template is work in progress and new features may be added in the future.
 
 - building with Zig 0.16
 - i18n support
-- UI is designed using builder ui files.
+- UI is designed using [blueprint](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/)
 - .desktop file (Desktop Environment Integration)
 - .metainfo file for app metadata. (AppStream)
 - flatpak support
 - application icons 
 
 ## Future feature ideas.
-  - Use blueprint to define UI and generate builder .ui files automatically.
   - Support for getting "zig-gobject" from the upstream repository with `zig fetch`.
   - Add more libadwaita widgets and features as a showcase.
   - A template generator to create new projects from this template.
@@ -27,6 +26,7 @@ The template is work in progress and new features may be added in the future.
 
 - Zig 0.16
 - Gtk-4.0 and Adw-1.0 introspection files must be installed on the system.
+- blueprint-compiler
 - zig-gobject from [timlau/zig-gobject](https://github.com/timlau/zig-gobject) it contains som zig 0.16 fixes, currently not in the upstream zig-gobject.
 - zig-gobject must be checked out in the directory above the application (../zig-gobject).
   - Bindings must be generated using `zig build codegen`.
